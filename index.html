@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes move {
+            0% {
+                transform: translateZ(0px);
+                background-color: #222;
+            }
+            100% {
+                transform: translateZ(200px);
+                background-color: #fff;
+            }
+        }
+        body {
+            background-color: black;
+        }
+        .father {
+            width: 400px;
+            height: 400px;
+            background-color: black;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            perspective: 800px;
+        }
+        .son {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background-color: #222;
+            /* transition: all 0.3s; */
+            animation: move 3s infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        
+    </div>
+    <script>
+        let father = document.querySelector('.father')
+        
+        let str = ""
+        for (let i = 0;i < 20;i++) {
+            for (let j = 0;j < 20;j++) {
+                str += `<div class="son" style="animation-delay: ${(i+j)*0.3}s"></div>`
+            }
+        }
+        // console.log(str);
+        father.innerHTML = str;
+    </script>
+</body>
+</html>

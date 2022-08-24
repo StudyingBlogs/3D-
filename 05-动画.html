@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* key : 关键
+        frame：帧 */
+        @keyframes move {
+            0% {
+                transform: translateX(0px) translateY(0px);
+                background-color: red;
+            }
+            25% {
+                transform: translateX(500px) translateY(0px);
+                background-color: skyblue;
+            }
+            50% {
+                transform: translateX(500px) translateY(500px);
+                background-color: green;
+            }
+            75% {
+                transform: translateX(0px) translateY(500px);
+                background-color: pink;
+            }
+            100% {
+                transform: translateX(0px) translateY(0px);
+                background-color: blue;
+            }
+        }
+        /* 动画 */
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+            animation: move 10s  infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
